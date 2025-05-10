@@ -3,15 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web App для Telegram</title>
+    <title>Секундомер, Таймер и Курс TON</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Привет, Telegram Web App!</h1>
-        <p>Нажми на кнопку, чтобы отправить данные в Telegram.</p>
-        <button class="button" id="sendDataButton">Отправить данные</button>
+        <h1>Секундомер, Таймер и Курс TON</h1>
+        <div class="tabs">
+            <button class="tab-btn active" data-target="stopwatch">Секундомер</button>
+            <button class="tab-btn" data-target="timer">Таймер</button>
+            <button class="tab-btn" data-target="ton">Курс TON</button>
+        </div>
+
+        <!-- Секундомер -->
+        <div class="tab-content active" id="stopwatch">
+            <div class="display" id="stopwatchDisplay">00:00:00</div>
+            <div class="buttons">
+                <button class="button" id="startStopwatch">Старт</button>
+                <button class="button" id="stopStopwatch">Стоп</button>
+                <button class="button" id="resetStopwatch">Сброс</button>
+            </div>
+        </div>
+
+        <!-- Таймер -->
+        <div class="tab-content" id="timer">
+            <div class="display" id="timerDisplay">00:00:00</div>
+            <div class="input-group">
+                <input type="number" id="hours" placeholder="Часы" min="0" max="23">
+                <input type="number" id="minutes" placeholder="Минуты" min="0" max="59">
+                <input type="number" id="seconds" placeholder="Секунды" min="0" max="59">
+            </div>
+            <div class="buttons">
+                <button class="button" id="startTimer">Старт</button>
+                <button class="button" id="stopTimer">Стоп</button>
+                <button class="button" id="resetTimer">Сброс</button>
+            </div>
+        </div>
+
+        <!-- Курс TON -->
+        <div class="tab-content" id="ton">
+            <div class="display" id="tonDisplay">--.-- USDT</div>
+            <button class="button" id="getTonPrice">Обновить курс TON</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
