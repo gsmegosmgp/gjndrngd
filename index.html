@@ -4,55 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web App для Telegram</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        h1 {
-            color: #333;
-        }
-        .button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #0088cc;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Привет, это мой Web App!</h1>
+        <h1>Привет, Telegram Web App!</h1>
         <p>Нажми на кнопку, чтобы отправить данные в Telegram.</p>
         <button class="button" id="sendDataButton">Отправить данные</button>
     </div>
 
-    <script>
-        // Инициализация Telegram Web App
-        window.Telegram.WebApp.onEvent('mainButtonClicked', function() {
-            let data = { message: "Привет, это данные с Web App!" };
-            window.Telegram.WebApp.sendData(JSON.stringify(data));
-        });
-
-        // Показать кнопку
-        window.Telegram.WebApp.ready();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
